@@ -15,12 +15,20 @@
 
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-    
-if __name__ == "__main__":
-    main()
+def intake(user_name, age):
+  if type(user_name) != str or type(age) != str:
+    return 0
+  elif user_name == age:
+    return 1
+  elif len(user_name) > len(age):
+    return 2
+  elif age == 'learn':
+    return 3
+  else:
+    return "Other"
+
+print(intake('sting', 1))
+print(intake('sting', 'sting'))
+print(intake('name', 'age'))
+print(intake('sting', 'learn'))
+print(intake('na', 'string'))
